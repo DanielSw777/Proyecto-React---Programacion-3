@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="player-container">
+    <div class="buttons">
+        <button id="prev-btn">&#9664;&#9664;</button>
+        <button id="rewind-btn">&#9664;</button>
+        <button id="play-btn">▶️</button>
+        <button id="forward-btn">&#9654;</button>
+        <button id="next-btn">&#9654;&#9654;</button>
+        <button id="repeat-btn">🔁</button>
+        <button id="shuffle-btn">🔀</button>
+    </div>
+    <audio id="audio-player" controls>
+        <source src="cancion1.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+</div>
+
+<script>
+    const audioPlayer = document.getElementById('audio-player');
+    const playBtn = document.getElementById('play-btn');
+    const rewindBtn = document.getElementById('rewind-btn');
+    const forwardBtn = document.getElementById('forward-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const repeatBtn = document.getElementById('repeat-btn');
+    const shuffleBtn = document.getElementById('shuffle-btn');
+
+    const playlist = ['cancion1.mp3', 'cancion2.mp3', 'cancion3.mp3'];
+    let currentTrackIndex = 0;
+    let isRepeating = false;
+    let isShuffling = false;
+
+    playBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playBtn.textContent = '⏸️';
+        } else {
+            audioPlayer.pause();
+            playBtn.textContent = '▶️';
+        }
+    });
+
+    rewindBtn.addEventListener('click', () => {
+        audioPlayer.currentTime -= 10;
+    });
+
+    forwardBtn.addEventListener('click', () => {
+        audioPlayer.currentTime += 10;
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+        audioPlayer.src = playlist[currentTrackIndex];
+        audioPlayer.play();
+        playBtn.textContent = '⏸️';
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+        audioPlayer.src = playlist[currentTrackIndex];
+        audioPlayer.play();
+        playBtn.textContent = '⏸️';
+    });
+
+    repeatBtn.addEventListener('click', () => {
+        isRepeating = !isRepeating;
+        audioPlayer.loop = isRepeating;
+        repeatBtn.classList.toggle('active', isRepeating);
+    });
+
+    shuffleBtn.addEventListener('click', () => {
+        isShuffling = !isShuffling;
+        shuffleBtn.classList.toggle('active', isShuffling);
+    });
+
+    audioPlayer.addEventListener('ended', () => {
+        if (isShuffling) {
+            let nextTrackIndex;
+            do {
+                nextTrackIndex = Math.floor(Math.random() * playlist.length);
+            } while (nextTrackIndex === currentTrackIndex);
+            currentTrackIndex = nextTrackIndex;
+        } else if (!isRepeating) {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+        }
+        audioPlayer.src = playlist[currentTrackIndex];
+        audioPlayer.play();
+    });
+</script>
+
+</body>
+</html>

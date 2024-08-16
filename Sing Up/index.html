@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="signup-box">
+            <h2>Sign up</h2>
+            <form>
+                <input type="email" placeholder="Your Email Address" required>
+                <div class="verification">
+                    <input type="text" placeholder="Verification Code" required>
+                    <button type="button">Get Code</button>
+                </div>
+                <input type="text" placeholder="User Name" required>
+                <input type="password" placeholder="Password (6-16 characters)" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <div class="gender">
+                    <input type="radio" id="Hombre" name="gender" value="Hombre" checked>
+                    <label for="Hombre">Hombre</label>
+                    <input type="radio" id="Mujer" name="gender" value="Mujer">
+                    <label for="Mujer">Mujer</label>
+                    <input type="radio" id="No Binario" name="gender" value="No Binario">
+                    <label for="No Binario">No Binario</label>
+                </div>
+                <button type="submit">Sign up</button>
+                <div class="terms">
+                    <input type="checkbox" required>
+                    <label for="terms">I have read and accept <a href="#">Terms and Conditions</a></label>
+                </div>
+                <div class="social-signup">
+                    <p>or</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="google-icon.png" alt="Google"></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
