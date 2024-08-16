@@ -1,0 +1,44 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 17px;
+    width: calc(100% - 300px);
+    height: calc(100% - 60px);
+    top: 60px;
+}
+
+.active {
+    background-color: var(--white);
+}
