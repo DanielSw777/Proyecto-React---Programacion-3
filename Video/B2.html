@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Video MP4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            flex-direction: column;
+        }
+        #videoPlayer {
+            width: 640px;
+            height: 360px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 640px;
+            margin-top: 10px;
+        }
+        .volume-control {
+            display: flex;
+            align-items: center;
+        }
+        .like-dislike {
+            display: flex;
+            align-items: center;
+        }
+        .comment-section {
+            width: 640px;
+            margin-top: 10px;
+        }
+        .comment-section textarea {
+            width: 100%;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reproductor de Video MP4</h1>
+    <video id="videoPlayer" controls>
+        <source src="video1.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
+    <div class="controls">
+        <button onclick="skipVideo(-10)">Retroceder 10s</button>
+        <button onclick="skipVideo(10)">Avanzar 10s</button>
+        <button onclick="previousVideo()">Anterior</button>
+        <button onclick="nextVideo()">Siguiente</button>
+        <button onclick="downloadVideo()">Descargar</button>
+        <div class="like-dislike">
+            <button onclick="likeVideo()">👍</button>
+            <button onclick="dislikeVideo()">👎</button>
+        </div>
+    </div>
+    <div class="comment-section">
+        <textarea id="comment" placeholder="Deja un comentario..."></textarea>
+        <button onclick="submitComment()">Enviar</button>
+    </div>
+
+    <script>
+        const video = document.getElementById('videoPlayer');
+        const videoList = [
+            { src: 'video1.mp4', title: 'Video 1' },
+            { src: 'video2.mp4', title: 'Video 2' },
+            { src: 'video3.mp4', title: 'Video 3' },
+            { src: 'video4.mp4', title: 'Video 4' },
+            { src: 'video5.mp4', title: 'Video 5' },
+            { src: 'video6.mp4', title: 'Video 6' },
+            { src: 'video7.mp4', title: 'Video 7' },
+            { src: 'video8.mp4', title: 'Video 8' },
+            { src: 'video9.mp4', title: 'Video 9' },
+            { src: 'video10.mp4', title: 'Video 10' },
+            { src: 'video11.mp4', title: 'Video 11' },
+            { src: 'video12.mp4', title: 'Video 12' },
+            { src: 'video13.mp4', title: 'Video 13' },
+            { src: 'video14.mp4', title: 'Video 14' },
+            { src: 'video15.mp4', title: 'Video 15' },
+            { src: 'video16.mp4', title: 'Video 16' },
+            { src: 'video17.mp4', title: 'Video 17' },
+            { src: 'video18.mp4', title: 'Video 18' },
+            { src: 'video19.mp4', title: 'Video 19' },
+            { src: 'video20.mp4', title: 'Video 20' },
+            { src: 'video21.mp4', title: 'Video 21' },
+            { src: 'video22.mp4', title: 'Video 22' }
+
+        ];
+        let currentVideoIndex = 0;
+
+        function loadVideo(index) {
+            if (index >= 0 && index < videoList.length) {
+                video.src = videoList[index].src;
+                video.play();
+                currentVideoIndex = index;
+            }
+        }
+
+        function playPauseVideo() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        function skipVideo(seconds) {
+            video.currentTime += seconds;
+        }
+
+        function muteUnmuteVideo() {
+            video.muted = !video.muted;
+        }
+
+        function changeVolume(value) {
+            video.volume = value;
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                video.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        function nextVideo() {
+            loadVideo((currentVideoIndex + 1) % videoList.length);
+        }
+
+        function previousVideo() {
+            loadVideo((currentVideoIndex - 1 + videoList.length) % videoList.length);
+        }
+
+        function downloadVideo() {
+            const a = document.createElement('a');
+            a.href = video.currentSrc;
+            a.download = videoList[currentVideoIndex].title;
+            a.click();
+        }
+
+        function likeVideo() {
+            alert("Te gusta el video");
+        }
+
+        function dislikeVideo() {
+            alert("No te gusta el video");
+        }
+
+        function submitComment() {
+            const comment = document.getElementById('comment').value;
+            alert(`Comentario enviado: ${comment}`);
+        }
+
+        // Cargar el primer video al iniciar
+        loadVideo(currentVideoIndex);
+    </script>
+</body>
+</html>
