@@ -1,0 +1,146 @@
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-image: url('Images/IMAGEN.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #f5f5f5;
+}
+
+.container {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo con transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #1DB954;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+.library-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.library-item {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.library-item h3 {
+    color: #1DB954;
+    margin-bottom: 10px;
+}
+
+.library-item p {
+    color: #f5f5f5;
+    margin-bottom: 15px;
+}
+
+.library-item button {
+    padding: 10px 20px;
+    background-color: #4309a0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(3, 248, 36);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Estilo para la lista de canciones */
+.song-list {
+    list-style-type: none;
+    padding: 0;
+    color: #f5f5f5;
+}
+
+/* Estilo para cada canción en la lista */
+.song-list li {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para el título de la canción */
+.song-list p {
+    font-size: 1.1em;
+    color: #1DB954;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Estilo para el reproductor de audio */
+.song-list audio {
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    background-color: #333; /* Fondo del reproductor */
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+}
+
+/* Estilo para los controles de audio, si el navegador permite personalización */
+audio::-webkit-media-controls-panel {
+    background-color: #333; /* Fondo de los controles */
+    border-radius: 5px;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: #1DB954; /* Color del botón de reproducción */
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: #1DB954; /* Color del control de volumen */
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: #1DB954; /* Color del botón de silencio */
+}
