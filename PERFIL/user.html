@@ -1,0 +1,171 @@
+ ,m<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descripción de tu página">
+    <link rel="stylesheet" href="styles/user.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Talkive! Mi usuari</title>
+</head>
+
+<body>
+    <button id="volver-main" onclick="volverMain()">
+        <i class="fas fa-times"></i>
+    </button>
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="img/Avatar.png" alt="Avatar de usuario">
+                    <button type="button" class="boton-avatar">
+                        <i class="far fa-image"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">Mi usuario</h3>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+
+                    <label for="Nombre">Nombre:</label>
+                    <input type="text" id="Nombre" name="Nombre" required>
+                    <br>
+                    <label for="Apellido">Apellido:</label>
+                    <input type="text" id="Apellido" name="Apellido" required>
+                    <br>
+                    <label for="Nombre de Usuario">Nombre de Usuario:</label>
+                    <input type="text" id="Nombre de Usuario" name="Nombre de Usuario" required>
+                    <br>
+                    <label for="Correo Electronico">Correo Electronico:</label>
+                    <input type="text" id="Correo Electronicoa" name="Correo Electronico" required>
+                    <br>
+                    <label for="Contrasena">Contraseña:</label>
+                    <input type="text" id="Contrasena" name="Contrasena" required>
+                    <br>
+
+ <div class="cambiar-nombre">
+    <button id="cambiar-Datos" onclick="mostrarModal()">Cambiar Datos</button>
+     <div id="modal" class="modal">
+         <div class="modal-content">
+            <span class="close-button" onclick="cerrarModal()">&times;</span>
+            <h2>Cambiar Nombre</h2>
+            <form>
+                <input type="password" id="nombreAnt" name="nombreanterior" placeholder="Nombre Anterior" required>
+                <br>
+                 <input type="password" id="nuevo_nombre" name="nombrenuevo" placeholder="Nuevo Nombre" required>
+                 <br>
+                 <input type="password" id="repetir_nombre" name="repetir_nombre" placeholder="Repetir Nombre Nuevo" required>
+                 <br>
+                 <button type="button" onclick="guardarnombre()">Guardar Nombre</button>
+
+<div class="cambiar-apellido">
+    <div id="modal2" class="modal2">
+        <div class="modal2-content">
+            <h2>Cambiar Apellido</h2>
+            <form>
+                <input type="password" id="apellidoAnt" name="apellidoanterior" placeholder="Apellido Anterior" required>
+                <br>
+                <input type="password" id="nuevo_apellido" name="apellidonuevo" placeholder="Nuevo Apellido" required>
+                <br>
+                <input type="password" id="repetir_apellido" name="repetir_apellido" placeholder="Repetir Apellido Nuevo" required>
+                <br>
+                <button type="button" onclick="guardarapellido()">Guardar Apellido</button>
+
+<div class="cambiar-Nombre de Usuario">
+    <div id="modal3" class="modal3">
+        <div class="modal3-content">
+        <h2>Cambiar Nombre de Usuarioo</h2>
+        <form>
+            <input type="password" id="NombredeUsuarioAnt" name="NombredeUsuarioanterior" placeholder="Nombre de Usuario Anterior" required>
+            <br>
+            <input type="password" id="nuevo_Nombre de Usuario" name="NombredeUsuarionuevo" placeholder="Nuevo Nombre de Usuario" required>
+             <br>
+             <input type="password" id="repetir_Nombre de Usuario" name="repetir_Nombre de Usuario" placeholder="Repetir Nombre de Usuario Nuevo" required>
+             <br>
+             <button type="button" onclick="guardarNombredeUsuari()">Guardar Nombre de Usuario</button>
+
+<div class="cambiar-Correo Electronico">
+    <div id="modal4" class="modal4">
+     <div class="modal4-content">
+        <h2>Cambiar Correo Electronico</h2>
+        <form>
+             <input type="password" id="CorreoElectronicoAnt" name="Correo Electronicoanterior" placeholder="Correo Electronico Anterior" required>
+             <br>
+             <input type="password" id="nuevo_Correo Electronico" name="Correo Electroniconuevo" placeholder="Nuevo Correo Electronico" required>
+             <br>
+             <input type="password" id="repetir_Correo Electronico" name="repetir_Correo Electronico" placeholder="Repetir Correo Electronico Nuevo" required>
+             <br>
+             <button type="button" onclick="guardarCorreoElectronico()">Guardar Correo Electronico</button>
+
+<div class="cambiar-contraseña">
+         <div id="modal5" class="modal5">
+         <div class="modal5-content">
+         <h2>Cambiar Contraseña</h2>
+         <form>
+             <input type="password" id="contraseñaAnt" name="contraeñaanterior" placeholder="Contraseña Anterior" required>
+             <br>
+             <input type="password" id="nueva_contraeña" name="contraseñanueva" placeholder="Nueva Contraseña" required>
+             <br>
+             <input type="password" id="repetir_contraseña" name="repetir_contraseña" placeholder="Repetir Contraseña Nueva" required>
+             <br>
+             <button type="button" onclick="guardarContrasena()">Guardar Contraseña</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function volverMain() {
+        window.location.href = "main.html";
+        }
+        function mostrarModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'block';
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        function guardarContrasena() {
+            const contrasenaAnteriorInput = document.getElementById('contrasena-anterior');
+            const nuevaContrasenaInput = document.getElementById('nueva-contrasena');
+            const repetirContrasenaInput = document.getElementById('repetir-contrasena');
+
+            const contrasenaAnterior = contrasenaAnteriorInput.value;
+            const nuevaContrasena = nuevaContrasenaInput.value;
+            const repetirContrasena = repetirContrasenaInput.value;
+
+            // Esta funcion no esta funcionando correctamente
+
+            if (contrasenaAnterior === '' || nuevaContrasena === '' || repetirContrasena === '') {
+                alert('Todos los campos son obligatorios');
+                return;
+            }
+
+            if (nuevaContrasena !== repetirContrasena) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+
+            cerrarModal();
+            
+            contrasenaAnteriorInput.value = '';
+            nuevaContrasenaInput.value = '';
+            repetirContrasenaInput.value = '';
+        }
+    </script>
+</body>
+
+</html>
