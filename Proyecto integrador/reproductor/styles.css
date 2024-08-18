@@ -1,0 +1,162 @@
+:root {
+    --bgcolor: #121212;
+    --light-textcolor: #fff;
+    --dark-textcolor: #b3b3b3;
+    --accent-color: #1db954;
+    --border-radius: 10px;
+    --font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--bgcolor);
+    color: var(--light-textcolor);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.player-container {
+    background-color: #282828;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    width: 360px;
+    max-width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.album-container {
+    margin-bottom: 20px;
+}
+
+.album {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    position: relative;
+}
+
+.album img {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.album-info {
+    text-align: left;
+}
+
+.album-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.album-artist {
+    color: var(--dark-textcolor);
+    margin: 0;
+}
+
+.track-list {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.track-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--dark-textcolor);
+}
+
+.track-number {
+    font-size: 0.9rem;
+}
+
+.track-title {
+    flex: 1;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.track-duration {
+    color: var(--dark-textcolor);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--light-textcolor);
+    padding: 12px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 0 8px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background-color: #1ed760;
+}
+
+.play-btn {
+    background-color: #1ed760;
+    font-size: 2rem;
+}
+
+.repeat-btn {
+    background-color: #1db954;
+    font-size: 1.5rem;
+    border: 2px solid #1db954;
+}
+
+.repeat-btn.active {
+    background-color: #1ed760;
+    border-color: #1ed760;
+}
+
+.progress-container {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background-color: var(--dark-textcolor);
+    height: 5px;
+    border-radius: var(--border-radius);
+    position: relative;
+    width: 100%;
+}
+
+.progress {
+    background-color: var(--accent-color);
+    height: 100%;
+    width: 50%; /* Adjust based on current progress */
+    transition: width 0.1s ease;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--dark-textcolor);
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="player-container">
+        <header>
+            <h1>Reproductor de Música</h1>
+        </header>
+        <div class="album-container">
+            <div class="album">
+                <img src="album-art.jpg" alt="Portada del Álbum">
+                <div class="album-info">
+                    <h2 class="album-title">Título del Álbum</h2>
+                    <p class="album-artist">Nombre del Artista</p>
+                </div>
+            </div>
+        </div>
+        <div class="track-list">
+            <div class="track-item">
+                <span class="track-number">01</span>
+                <span class="track-title">Título de la Canción</span>
+                <span class="track-duration">3:45</span>
+            </div>
+            <!-- Repetir para más canciones -->
+        </div>
+        <div class="controls">
+            <button class="control-btn repeat-btn" title="Repetir">&#x1F501;</button>
+            <button class="control-btn prev-btn" title="Anterior">&#9664;&#9664;</button>
+            <button class="control-btn play-btn" title="Reproducir">&#9654;</button>
+            <button class="control-btn next-btn" title="Siguiente">&#9654;&#9654;</button>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="time">
+                <span class="current-time">0:00</span> / <span class="duration">3:45</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
