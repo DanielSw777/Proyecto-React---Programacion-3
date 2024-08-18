@@ -1,4 +1,6 @@
 import "./ToolBar.css";
+import logo from "../../assets/logo.jpg";
+import { Link } from "react-router-dom";
 
 const ToolBar = () => {
 
@@ -11,9 +13,9 @@ const ToolBar = () => {
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
-                <div className="user">
-                    <img src="assets/imgs/customer01.jpg" alt="" />
-                </div>
+                <Link to="/login" className="user">
+                    <img src={logo} alt={logo} />
+                </Link>
             </div>
         </>
     );

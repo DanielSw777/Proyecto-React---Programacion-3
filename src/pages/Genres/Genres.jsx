@@ -2,7 +2,7 @@ import React from 'react'
 
 const Genres = () => {
     return (
-        <div className='main'>Genres</div>
+        <div>Genres</div>
     )
 }
 

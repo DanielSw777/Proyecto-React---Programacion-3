@@ -1,0 +1,223 @@
+.main__container-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 7px 35px var(--background);
+    border-radius: 5px;
+    height: 100%;
+    width: 100%
+}
+
+.main__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.277rem 1.377rem;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, var(--blue) 70%, var(--black1) 120%, var(--blue2));
+}
+
+.main__form-title {
+    font-size: 1.78rem;
+    color: var(--white);
+    text-shadow: 2px 2px 15px #adadff;
+    margin: 0.5rem 0rem;
+}
+
+.main__form-password,
+.main__form-email {
+    width: 100%;
+    border: 0;
+    border-radius: 0.35rem;
+    height: 2.5rem;
+    background-color: var(--white);
+    padding: 0.7rem;
+    margin: 0.5rem 0rem;
+    color: #0135b6;
+}
+
+.main__form-password::placeholder,
+.main__form-email::placeholder {
+    color: #5e5e5e;
+}
+
+.main__form-password::selection,
+.main__form-email::selection {
+    color: var(--white);
+    background-color: #0135b6;
+}
+
+.main__form-password:focus,
+.main__form-email:focus {
+    background-color: #d7dce0;
+    box-shadow: inset 0px 0px 15px rgb(133, 158, 221);
+}
+
+.main__form-submit {
+    border: 0;
+    border-radius: 1rem;
+    height: 2.5rem;
+    margin: 0.5rem 0rem;
+    width: 60%;
+    color: #032a8d;
+    background-color: rgb(190, 188, 188);
+    opacity: 70%;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 1s ease-in-out 0.1s;
+}
+
+.main__form-submit:hover {
+    transform: scale(1.1);
+    border: 1px solid #023ccc;
+    box-shadow: 0px 0px 17px #044bff;
+    text-shadow: 0px 0px 10px #0c51ff;
+}
+
+.main__form-text-error {
+    color: var(--white);
+    font-size: 1rem;
+    margin: 0.2rem 0rem;
+}
+
+.main__form-text {
+    color: var(--white);
+    font-size: 1rem;
+    margin: 0.2rem 0rem;
+}
+
+.main__form-link-reg {
+    text-decoration: none;
+    color: #608dff;
+    font-size: 1.1rem;
+    margin: 0.2rem 0rem;
+
+    transition: all 1s ease-in-out .5s;
+}
+
+.main__form-link-reg:hover {
+    scale: 1.1;
+    text-shadow: 0px 0px 1px var(--white);
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+input[type="email"].valid {
+    background-color: rgb(92, 248, 131);
+    color: green;
+}
+
+input[type="email"].invalid {
+    background-color: rgb(255, 123, 123);
+    color: rgb(219, 0, 0);
+}
+
+
+@media(min-width: 768px) {
+    .main__container-text-form {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2.777rem 1.7rem;
+    }
+
+    .main__form-title {
+        margin: 0.777rem 0rem;
+        font-size: 2rem;
+    }
+
+    .main__form {
+        width: 50%;
+        padding: 1.437rem 1.53rem;
+    }
+
+    .main__form-password,
+    .main__form-email,
+    .main__form-submit {
+        margin: 0.6rem 0rem;
+        height: 2.673rem;
+        font-size: 0.87rem;
+    }
+
+    .main__form-text-error,
+    .main__form-text,
+    .main__form-link-reg {
+        margin: 0.3rem 0rem;
+    }
+}
+
+@media(min-width: 1024px) {
+    .main__container-text-form {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3.5rem;
+    }
+
+    .main__container-text {
+        background: transparent;
+        justify-content: space-between;
+        margin: 0rem 2.3rem;
+    }
+
+    .main__container-form {
+        padding: 0rem;
+        margin: 0rem 2.3rem;
+    }
+
+    .main__form {
+        padding: 1.537rem 2rem;
+    }
+
+    .main__form-title {
+        font-size: 2.177rem;
+    }
+
+    .main__form-password,
+    .main__form-email,
+    .main__form-submit {
+        height: 2.7rem;
+        font-size: 0.93rem;
+    }
+
+    .main__form-text-error {
+        color: var(--gray);
+        margin: 0.373rem 0rem;
+    }
+
+    .main__form-text,
+    .main__form-link-reg {
+        margin: 0.373rem 0rem;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    .main__form {
+        padding: 1.7rem 3.377rem;
+    }
+
+    .main__form-title {
+        font-size: 2.3rem;
+        margin: 1rem 0rem;
+    }
+
+    .main__form-email,
+    .main__form-password,
+    .main__form-submit {
+        height: 3rem;
+        font-size: 1.03rem;
+        margin: 0.777rem 0rem;
+    }
+
+    .main__form-text-error,
+    .main__form-text,
+    .main__form-link-reg {
+        margin: 0.377rem 0rem;
+        font-size: 1.177rem;
+    }
+}

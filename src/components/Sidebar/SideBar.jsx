@@ -1,21 +1,19 @@
 import { NavLink } from 'react-router-dom';
 import "./SideBar.css";
+import logo from "../../assets/logo.jpg";
 
 const SideBar = () => {
+    
     return (
         <>
             <nav className="navigation">
                 <ul>
                     <li>
-                        <NavLink to={"/"}>
-                            <span className="icon">
-                                <ion-icon name="pulse-outline"></ion-icon>
-                            </span>
-                            <span className="title">Harmony Hub</span>
-                        </NavLink>
+                        <img src={logo} alt={logo} />
+                       <span className="title">Harmony Hub</span>
                     </li>
                     <li>
-                        <NavLink to={"/"}>
+                        <NavLink to="/">
                             <span className="icon">
                                 <ion-icon name="home-outline"></ion-icon>
                             </span>
@@ -23,7 +21,7 @@ const SideBar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/playlist"}>
+                        <NavLink to="/playlist">
                             <span className="icon">
                                 <ion-icon name="list-outline"></ion-icon>
                             </span>
@@ -31,7 +29,7 @@ const SideBar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/albums"}>
+                        <NavLink to="/albums">
                             <span className="icon">
                                 <ion-icon name="albums-outline"></ion-icon>
                             </span>
@@ -39,7 +37,7 @@ const SideBar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/songs"}>
+                        <NavLink to="/songs">
                             <span className="icon">
                                 <ion-icon name="musical-notes-outline"></ion-icon>
                             </span>
@@ -47,7 +45,7 @@ const SideBar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/artists"}>
+                        <NavLink to="/artists">
                             <span className="icon">
                                 <ion-icon name="body-outline"></ion-icon>
                             </span>
@@ -55,7 +53,7 @@ const SideBar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/genres"}>
+                        <NavLink to="/genres">
                             <span className="icon">
                                 <ion-icon name="nuclear-outline"></ion-icon>
                             </span>
@@ -63,7 +61,7 @@ const SideBar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/settings"}>
+                        <NavLink to="/settings">
                             <span className="icon">
                                 <ion-icon name="settings-outline"></ion-icon>
                             </span>
@@ -71,7 +69,7 @@ const SideBar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/sign-out"}>
+                        <NavLink to="/sign-out">
                             <span className="icon">
                                 <ion-icon name="log-out-outline"></ion-icon>
                             </span>

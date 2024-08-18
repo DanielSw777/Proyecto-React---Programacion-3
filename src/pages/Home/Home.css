@@ -1,1 +1,49 @@
+.home__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 7px 35px var(--background);
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+}
 
+.home__container-title {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.home__container-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.home__container-description,
+.home__container-sub,
+.home__description {
+    margin: 15px 0;
+}
+
+.home__button {
+    margin: 20px 0;
+    width: 17rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: 1.5s all;
+}
+
+.home__button:hover {
+    scale: 1.05;
+    background-color: var(--blue2);
+}

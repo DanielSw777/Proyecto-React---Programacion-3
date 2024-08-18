@@ -2,7 +2,11 @@ import React from 'react'
 
 const PlayList = () => {
     return (
-        <div className='main'>PlayList</div>
+        <div>
+            <section>
+                pal
+            </section>
+        </div>
     )
 }
 

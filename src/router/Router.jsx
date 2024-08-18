@@ -7,6 +7,9 @@ import Albums from "../pages/Albums/Albums";
 import Songs from "../pages/Songs/Songs";
 import Artists from "../pages/Artists/Artists";
 import Genres from "../pages/Genres/Genres";
+import Settings from "../pages/Settings/Settings";
+import Login from "../pages/Login/Login";
+import ProtectedRoute from "./ProtectedRoute";
 
 const Router = createBrowserRouter([
     {
@@ -37,6 +40,18 @@ const Router = createBrowserRouter([
             {
                 path: "/genres",
                 element: <Genres />
+            },
+            {
+                path: "/settings",
+                element: (
+                    <ProtectedRoute>
+                        <Settings />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: "/login",
+                element: <Login />
             }
         ]
     }
