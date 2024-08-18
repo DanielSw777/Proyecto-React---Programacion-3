@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --blue2: #3329a1;
+    --background: #00000017;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Ajusta el tamaño máximo del reproductor si es necesario */
+    padding: 1rem;
+}
+
+.player-container {
+    background-color: var(--black1);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 360px; /* Ajusta el ancho máximo del reproductor si es necesario */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.album-container {
+    margin-bottom: 20px;
+}
+
+.album {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue2);
+    border-radius: 15px;
+    padding: 10px;
+    position: relative;
+}
+
+.album img {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.album-info {
+    text-align: left;
+}
+
+.album-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.album-artist {
+    color: var(--black2);
+    margin: 0;
+}
+
+.track-list {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.track-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--black2);
+}
+
+.track-number {
+    font-size: 0.9rem;
+}
+
+.track-title {
+    flex: 1;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.track-duration {
+    color: var(--black2);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    background-color: var(--blue);
+    border: none;
+    color: var(--white);
+    padding: 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 0 8px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background-color: var(--blue2);
+}
+
+.play-btn {
+    background-color: var(--blue2);
+    font-size: 2rem;
+}
+
+.repeat-btn {
+    background-color: var(--blue2);
+    font-size: 1.5rem;
+    border: 2px solid var(--blue2);
+}
+
+.repeat-btn.active {
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+
+.progress-container {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background-color: var(--black2);
+    height: 5px;
+    border-radius: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.progress {
+    background-color: var(--blue2);
+    height: 100%;
+    width: 50%; /* Ajustar basado en el progreso actual */
+    transition: width 0.1s ease;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--black2);
+}
