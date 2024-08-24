@@ -1,12 +1,12 @@
 .main__container-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     box-shadow: 0 7px 35px var(--background);
     border-radius: 5px;
-    height: 100%;
-    width: 100%
+    width: 100%;
+    min-height: calc(100vh - 115px);
 }
 
 .main__form {
@@ -166,7 +166,6 @@ input[type="email"].invalid {
 
     .main__container-form {
         padding: 0rem;
-        margin: 0rem 2.3rem;
     }
 
     .main__form {

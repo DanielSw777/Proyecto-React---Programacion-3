@@ -1,17 +1,22 @@
-import React from 'react'
+import { useContext } from "react";
+import { MusicContext } from "../../context/MusicProvider";
+import "./CardSong.css";
 
-const CardSong = () => {
+const CardSong = ({ song }) => {
+    const { playTrack } = useContext(MusicContext);
     return (
         <>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="category"> Illustration </div>
-                <div class="heading"> A heading that must span over two lines
-                    <div class="author"> By <span class="name">Abi</span> 4 days ago</div>
+            <div className="song-card">
+                <img src={song.cover} alt={song.title} />
+                <div className="song-info">
+                    <h3 className="song-title">{song.title}</h3>
+                    <button type='button' className="song-play" onClick={() => playTrack(song)}>
+                        Play
+                    </button>
                 </div>
             </div>
         </>
     )
 }
 
-export default CardSong
+export default CardSong;

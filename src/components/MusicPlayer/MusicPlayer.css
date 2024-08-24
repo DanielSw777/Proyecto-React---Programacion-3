@@ -1,0 +1,127 @@
+.reproductor-musica {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanco);
+    padding: 1rem;
+    border-radius: 3px;
+    background-color: var(--black3);
+}
+
+.reproductor-audio {
+    padding: 0.005rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.reproductor-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.reproductor-img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.3rem;
+}
+
+.reproductor-img img{
+    border-radius: 0.3rem;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.reproductor-text {
+    width: 15rem;
+}
+
+.reproductor-musica h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.reproductor-musica p {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+.reproductor-audio span{
+    margin-bottom: 0.09rem;
+}
+
+#progreso {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: rgba(165, 165, 165, 0.4);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#progreso::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(165, 165, 165, 0.9);
+    width: 2px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    outline: 4px solid var(--blanco);
+    box-shadow: 0 6px 10px rgba(228, 228, 228, 0.3);
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    padding: 0.001rem 0.3rem;
+}
+
+.controles button {
+    margin: 0.5rem 0.7rem;
+    background: rgba(165, 165, 165, 0.3);
+    color: var(--blanco);
+    border-radius: 50%;
+    border: 1px solid var(--blanco);
+    outline: 0;
+    font-size: 1rem;
+    box-shadow: 0 6px 10px rgba(228, 228, 228, 0.3);
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+
+.controles .control {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.controles .iconoControl {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+
+.controles .control:hover {
+    transform: scale(1.1);
+}
+
+.controles .iconoControl {
+    transform: scale(1.3);
+}
+
+.controles .iconoControl:hover {
+    transform: scale(1.4);
+}

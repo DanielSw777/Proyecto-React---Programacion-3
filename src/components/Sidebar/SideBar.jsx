@@ -3,15 +3,15 @@ import "./SideBar.css";
 import logo from "../../assets/logo.jpg";
 
 const SideBar = () => {
-    
+
     return (
         <>
             <nav className="navigation">
+                <div className="navigation-logo">
+                    <img src={logo} alt={logo} />
+                    <span className="title">Harmony Hub</span>
+                </div>
                 <ul>
-                    <li>
-                        <img src={logo} alt={logo} />
-                       <span className="title">Harmony Hub</span>
-                    </li>
                     <li>
                         <NavLink to="/">
                             <span className="icon">

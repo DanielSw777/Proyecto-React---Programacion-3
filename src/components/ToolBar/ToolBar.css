@@ -4,8 +4,8 @@
     align-items: start;
     border-radius: 5px;
     width: 100%;
-    padding: 1rem;
-    margin: 0 0.5rem 0.7rem;
+    padding: 0.7rem;
+    margin: 0 0 0.7rem;
     box-shadow: 0 0 15px var(--background);
 }
 

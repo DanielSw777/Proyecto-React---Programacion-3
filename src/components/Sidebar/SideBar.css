@@ -1,3 +1,8 @@
+.navigation ::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0;
+}
+
 /* =============== Navigation ================ */
 .navigation {
     position: fixed;
@@ -15,9 +20,11 @@
 
 .navigation ul {
     position: absolute;
-    top: 0;
+    top: 6.5rem;
     left: 0;
     width: 100%;
+    height: calc(100% - 240px);
+    overflow: auto;
 }
 
 .navigation ul li a,
@@ -34,7 +41,7 @@
     background-color: var(--white);
 }
 
-.navigation ul li:nth-child(1) img {
+.navigation-logo img {
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
@@ -42,16 +49,16 @@
     height: 4.3rem;
 }
 
-.navigation ul li:nth-child(1) {
+.navigation-logo {
     margin: 10px 0 40px;
     pointer-events: none;
 }
 
-.navigation ul li:nth-child(1) .title{
+.navigation-logo .title{
     margin-top: 0.29rem;
 }
 
-.navigation ul li:nth-child(1),
+.navigation-logo,
 .navigation ul li a {
     position: relative;
     display: block;
@@ -66,7 +73,7 @@
     color: var(--blue);
 }
 
-.navigation ul li:nth-child(1) .icon,
+.navigation-logo .icon,
 .navigation ul li a .icon {
     position: relative;
     display: block;
@@ -76,12 +83,12 @@
     text-align: center;
 }
 
-.navigation ul li:nth-child(1) .icon ion-icon,
+.navigation-logo .icon ion-icon,
 .navigation ul li a .icon ion-icon {
     font-size: 1.75rem;
 }
 
-.navigation ul li:nth-child(1) .title,
+.navigation-logo .title,
 .navigation ul li a .title {
     position: relative;
     display: block;
