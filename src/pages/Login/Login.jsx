@@ -39,7 +39,17 @@ const Login = () => {
                     throw new Error("No se pudo iniciar sesión");
                 }
                 const responseData = await response.json();
-                login(responseData.token);
+                if (responseData.token) {
+                    const res_profile = await fetch(`${import.meta.env.VITE_API_BASE_URL}users/profiles/profile_data`, {
+                        headers: {
+                            Authorization: `Token ${responseData.token}`,
+                        }
+                    });
+                    const profile_data = await res_profile.json();
+                } else {
+                    throw new Error("No se obtuvo un token correctamente");
+                }
+                login(responseData.token, profile_data.user__id);
             } catch (error) {
                 console.error("Error al iniciar sesión", error);
                 setIsError(true);

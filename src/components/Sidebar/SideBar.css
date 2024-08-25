@@ -11,7 +11,6 @@
     background: var(--blue);
     border-left: 10px solid var(--blue);
     transition: 0.5s;
-    overflow: hidden;
 }
 
 .navigation.active {
@@ -20,15 +19,24 @@
 
 .navigation ul {
     position: absolute;
-    top: 6.5rem;
+    padding: 2.5rem 0;
+    margin-top: 2.3rem;
+    top: 3.5rem;
     left: 0;
     width: 100%;
-    height: calc(100% - 240px);
-    overflow: auto;
+    height: calc(100% - 210px);
+    overflow-y: auto;
+    list-style: none;
 }
 
+.navigation ul li button {
+    border: none;
+    background: none;
+}
+
+.navigation ul li button:hover,
 .navigation ul li a,
-.navigation ul li a:hover{
+.navigation ul li a:hover {
     position: relative;
     width: 100%;
     list-style: none;
@@ -36,6 +44,8 @@
     border-bottom-left-radius: 30px;
 }
 
+
+.navigation ul li button:hover,
 .navigation ul li a:hover,
 .navigation ul li a.active {
     background-color: var(--white);
@@ -50,15 +60,18 @@
 }
 
 .navigation-logo {
-    margin: 10px 0 40px;
+    padding: 10px 0 40px;
+    background-color: var(--blue1);
     pointer-events: none;
 }
 
-.navigation-logo .title{
+.navigation-logo .title {
     margin-top: 0.29rem;
 }
 
 .navigation-logo,
+
+.navigation ul li button,
 .navigation ul li a {
     position: relative;
     display: block;
@@ -68,11 +81,15 @@
     color: var(--white);
 }
 
+
+.navigation ul li button:hover,
 .navigation ul li a:hover,
 .navigation ul li a.active {
     color: var(--blue);
 }
 
+
+.navigation ul li button .icon,
 .navigation-logo .icon,
 .navigation ul li a .icon {
     position: relative;
@@ -83,11 +100,15 @@
     text-align: center;
 }
 
+
+.navigation ul li button ion-icon,
 .navigation-logo .icon ion-icon,
 .navigation ul li a .icon ion-icon {
     font-size: 1.75rem;
 }
 
+
+.navigation ul li button .title,
 .navigation-logo .title,
 .navigation ul li a .title {
     position: relative;
@@ -97,9 +118,12 @@
     line-height: 60px;
     text-align: center;
     white-space: nowrap;
+    font-size: 1rem;
 }
 
 /* --------- curve outside ---------- */
+
+.navigation ul li:hover button:before,
 .navigation ul li:hover a::before,
 .navigation ul li a.active::before {
     content: "";
@@ -114,6 +138,7 @@
     pointer-events: none;
 }
 
+.navigation ul li:hover button:after,
 .navigation ul li:hover a::after,
 .navigation ul li a.active::after {
     content: "";

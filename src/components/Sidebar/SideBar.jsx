@@ -1,8 +1,17 @@
-import { NavLink } from 'react-router-dom';
-import "./SideBar.css";
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthProvider';
 import logo from "../../assets/logo.jpg";
+import "./SideBar.css";
 
 const SideBar = () => {
+    const { logout } = useAuth("actions");
+    const { isAuthenticated } = useAuth("state");
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate("/");
+    };
 
     return (
         <>
@@ -21,11 +30,11 @@ const SideBar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/playlist">
+                        <NavLink to="/profile">
                             <span className="icon">
-                                <ion-icon name="list-outline"></ion-icon>
+                                <ion-icon name="person-circle-outline"></ion-icon>
                             </span>
-                            <span className="title">PlayLists</span>
+                            <span className="title">Profile</span>
                         </NavLink>
                     </li>
                     <li>
@@ -68,14 +77,20 @@ const SideBar = () => {
                             <span className="title">Settings</span>
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/sign-out">
-                            <span className="icon">
-                                <ion-icon name="log-out-outline"></ion-icon>
-                            </span>
-                            <span className="title">Sign Out</span>
-                        </NavLink>
-                    </li>
+                    {
+                        isAuthenticated ? (
+                            <li>
+                                <button type="button" onClick={handleLogout}>
+                                    <span className="icon">
+                                        <ion-icon name="log-out-outline"></ion-icon>
+                                    </span>
+                                    <span className="title">Sign Out</span>
+                                </button>
+                            </li>
+                        ) : (
+                            null
+                        )
+                    }
                 </ul>
             </nav>
         </>

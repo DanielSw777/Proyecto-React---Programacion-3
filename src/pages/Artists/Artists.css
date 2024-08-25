@@ -1,0 +1,84 @@
+.artists::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.artists::-webkit-scrollbar-thumb {
+    background-color: var(--blue2);
+    border-radius: 7px;
+}
+
+.artists::-webkit-scrollbar-track-piece {
+    border-radius: 7px;
+    background-color: var(--background);
+}
+
+.artists {
+    width: 100%;
+    box-shadow: 0 7px 35px var(--background);
+    border-radius: 5px;
+    height: calc(100vh - 200px);
+    overflow: auto;
+}
+
+.artists__container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.artists__title {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    line-height: 7rem;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.3rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.page-item {
+    width: 2.3rem;
+    height: 2.3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 0.07rem;
+    background-color: var(--blue);
+    color: var(--white)FFF;
+    cursor: pointer;
+}
+
+.page-btn {
+    cursor: pointer;
+    color: var(--white)FFF;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--blue2);
+}
+
+.page-btn:disabled {
+    opacity: 0.6;
+    background-color: var(--blue-disabled);
+}
+
+.bi-arrow-left::before,
+.bi-arrow-right::before {
+    padding: 0.7rem;
+}

@@ -1,0 +1,93 @@
+.albums::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.albums::-webkit-scrollbar-thumb {
+    background-color: var(--blue2);
+    border-radius: 7px;
+}
+
+.albums::-webkit-scrollbar-track-piece {
+    border-radius: 7px;
+    background-color: var(--background);
+}
+
+.albums {
+    width: 100%;
+    box-shadow: 0 7px 35px var(--background);
+    border-radius: 5px;
+    height: calc(100vh - 200px);
+    overflow: auto;
+}
+
+.albums__title {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    line-height: 7rem;
+}
+
+/* Contenedor de álbumes */
+.albums-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 16px;
+}
+
+/* Tarjeta de álbum */
+.album-card {
+    margin: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    vertical-align: middle;
+    transition: transform 0.2s;
+    text-decoration: none;
+    width: 250px; /* Asegura un tamaño fijo para cada tarjeta */
+    height: 300px; /* Ajusta la altura total de la tarjeta */
+    color: var(--black1);
+}
+
+/* Efecto al pasar el ratón sobre la tarjeta */
+.album-card:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen del álbum */
+.album-cover {
+    width: 100%;
+    height: 150px; /* Altura fija para las imágenes */
+    object-fit: cover;
+    object-position: center;
+    background-color: #f0f0f0; /* Color de fondo para tarjetas sin imagen */
+}
+
+/* Título del álbum */
+.album-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 8px 0;
+    padding: 0 10px; /* Añade espacio alrededor del título */
+}
+
+/* Botón 'Load More' */
+.load-more-button {
+    grid-column: span 1; /* Asegura que el botón ocupe una columna completa */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.load-more-button:hover {
+    background-color: #0056b3;
+}

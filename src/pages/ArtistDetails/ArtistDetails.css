@@ -1,0 +1,72 @@
+.artist {
+    width: 100%;
+    box-shadow: 0 7px 35px var(--background);
+    border-radius: 5px;
+    height: calc(100vh - 200px);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.artist-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--black2);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.artist__container-songs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.artist_cover img {
+    width: 17rem;
+    height: 17rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px #0008, 0 0 20px #000a;
+    object-fit: cover;
+    object-position: center;
+}
+
+.artist-details {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    row-gap: 10px;
+}
+
+.artist-name {
+    width: 100%;
+    font-size: 3rem;
+}
+
+.artist-subtitle {
+    font-size: 1rem;
+    color: var(--black1);
+    font-weight: 500;
+    text-wrap: balance;
+}
+
+.artist-link {
+    text-decoration: none;
+    color: var(--black3);
+    font-weight: 700;
+}
+
+.artist-noexist {
+    width: 100%;
+}
+
+l-reuleaux {
+    margin-top: 3.737rem;
+    width: 100%;
+}

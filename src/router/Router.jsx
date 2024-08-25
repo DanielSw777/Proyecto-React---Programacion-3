@@ -2,10 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
 import Error404 from "../pages/Error404/Error404";
 import Home from "../pages/Home/Home";
-import PlayList from "../pages/PlayList/PlayList";
+import Profile from "../pages/Profile/Profile";
 import Albums from "../pages/Albums/Albums";
+import AlbumDetails from "../pages/AlbumDetails/AlbumDetails";
 import Songs from "../pages/Songs/Songs";
 import Artists from "../pages/Artists/Artists";
+import ArtistDetails from "../pages/ArtistDetails/ArtistDetails";
 import Genres from "../pages/Genres/Genres";
 import Settings from "../pages/Settings/Settings";
 import Login from "../pages/Login/Login";
@@ -22,12 +24,16 @@ const Router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "/playlist",
-                element: <PlayList />
+                path: "/profile",
+                element: <Profile />
             },
             {
                 path: "/albums",
                 element: <Albums />
+            },
+            {
+                path: "/albums/:id",
+                element: <AlbumDetails />
             },
             {
                 path: "/songs",
@@ -36,6 +42,10 @@ const Router = createBrowserRouter([
             {
                 path: "/artists",
                 element: <Artists />
+            },
+            {
+                path: "/artists/:id",
+                element: <ArtistDetails />
             },
             {
                 path: "/genres",

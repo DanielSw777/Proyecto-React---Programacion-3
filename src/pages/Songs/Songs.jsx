@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import CardSong from '../../components/CardSong/CardSong';
 import { MusicContext } from '../../context/MusicProvider';
+import Pagination from '../../components/Pagination/Pagination';
 import "./Songs.css";
 
 const Songs = () => {
@@ -8,7 +9,7 @@ const Songs = () => {
     const [songs, setSongs] = useState([]);
     const [nextSongs, setNextSongs] = useState(null);
     const [previusSongs, setPreviusSongs] = useState(null);
-    const { setCurrentTrack } = useContext(MusicContext);
+    const { currentTrack, setCurrentTrack } = useContext(MusicContext);
 
     const fetchSongs = async (url) => {
         if (!isLoading) {
@@ -29,7 +30,6 @@ const Songs = () => {
                 sessionStorage.setItem('currentSongsPage', url);
             } catch (error) {
                 console.error("Error", error);
-                setIsError(true);
             } finally {
                 setIsLoading(false);
             }
@@ -42,19 +42,14 @@ const Songs = () => {
         fetchSongs(initialUrl);
     }, []);
 
-    const handleNextPage = () => {
-        fetchSongs(nextSongs);
-        window.scrollTo({ "behavior": "smooth", "top": 0 })
-    };
-
-    const handlePrevPage = () => {
-        fetchSongs(previusSongs);
+    const handlePageChange = (url) => {
+        fetchSongs(url);
         window.scrollTo({ "behavior": "smooth", "top": 0 })
     };
 
     return (
         <>
-            <div className="songs">
+            <section className="songs">
                 <div className="songs__container-title">
                     <h1 className="songs__title">Songs</h1>
                 </div>
@@ -71,32 +66,19 @@ const Songs = () => {
                             ></l-reuleaux>
                         ) : (
                             songs.length ? (
-                                songs.map(song => (<CardSong key={song.id} song={song} />))
+                                songs.map(song => (<CardSong key={song.id} song={song} isPlay={currentTrack?.id === song.id} />))
                             ) : (<h2>No hay canciones Disponibles</h2>)
                         )
                     }
                 </div>
                 {
                     songs.length && !isLoading ? (
-                        <section className="pagination-container">
-                            <ul className="pagination">
-                                <li className="page-item">
-                                    <button className="page-btn" onClick={handlePrevPage} disabled={!previusSongs}>
-                                        <ion-icon name="arrow-back-outline"></ion-icon>
-                                    </button>
-                                </li>
-                                <li className="page-item">
-                                    <button className="page-btn" onClick={handleNextPage} disabled={!nextSongs}>
-                                        <ion-icon name="arrow-forward-outline"></ion-icon>
-                                    </button>
-                                </li>
-                            </ul>
-                        </section>
+                        <Pagination next={nextSongs} prev={previusSongs} onPageChange={handlePageChange} />
                     ) : (
                         null
                     )
                 }
-            </div>
+            </section>
         </>
     );
 };

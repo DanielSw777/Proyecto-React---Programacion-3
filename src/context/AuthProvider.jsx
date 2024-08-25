@@ -16,7 +16,8 @@ function reducer(state, action) {
         case ACTIONS.LOGIN:
             return {
                 ...state,
-                token: action.payload,
+                token: action.payload.token,
+                user: action.payload.user,
                 isAuthenticated: true,
             };
         case ACTIONS.LOGOUT:
@@ -31,14 +32,15 @@ function reducer(state, action) {
 function AuthProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, {
         token: localStorage.getItem("token"),
+        user: JSON.parse(localStorage.getItem("user")),
         isAuthenticated: localStorage.getItem("token") ? true : false,
     });
     const navigate = useNavigate();
     const location = useLocation();
 
     const actions = {
-        login: (token) => {
-            dispatch({ type: ACTIONS.LOGIN, payload: token });
+        login: (token, user) => {
+            dispatch({ type: ACTIONS.LOGIN, payload: { token, user } });
             localStorage.setItem("token", token);
             const origin = location.state?.from?.pathname || "/";
             navigate(origin);
@@ -46,6 +48,7 @@ function AuthProvider({ children }) {
         logout: () => {
             dispatch({ type: ACTIONS.LOGOUT });
             localStorage.removeItem("token");
+            localStorage.removeItem("user");
         },
     };
 
