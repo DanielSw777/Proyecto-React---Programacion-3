@@ -1,32 +1,26 @@
 import { useContext, useEffect, useState } from 'react';
 import CardSong from '../../components/CardSong/CardSong';
+import { useAuth } from '../../context/AuthProvider';
+import "./OwnerSongs.css";
 import { MusicContext } from '../../context/MusicProvider';
-import Pagination from '../../components/Pagination/Pagination';
-import "./Songs.css";
 
 const Songs = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [songs, setSongs] = useState([]);
-    const [nextSongs, setNextSongs] = useState(null);
-    const [previusSongs, setPreviusSongs] = useState(null);
-    const { currentTrack, setCurrentTrack } = useContext(MusicContext);
+    const { userId } = useAuth("state");
+    const { currentTrack} = useContext(MusicContext);
 
-    const fetchSongs = async (url) => {
+    const fetchOwerSongs = async () => {
         if (!isLoading) {
             setIsLoading(true);
             try {
-                const response = await fetch(url);
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}harmonyhub/songs?owner=${userId}`);
                 if (!response.ok) {
                     throw new Error("Error al cargar canciones");
                 }
                 const responseData = await response.json();
                 setSongs(responseData.results);
-                setNextSongs(responseData.next);
-                setPreviusSongs(responseData.previous);
-                if (responseData.results.length > 0) {
-                    setCurrentTrack(responseData.results[0]);
-                }
-                sessionStorage.setItem('currentSongsPage', url);
+                console.log(responseData);
             } catch (error) {
                 console.error("Error", error);
             } finally {
@@ -36,23 +30,16 @@ const Songs = () => {
     };
 
     useEffect(() => {
-        const savedPage = sessionStorage.getItem('currentSongsPage');
-        const initialUrl = savedPage ?? `${import.meta.env.VITE_API_BASE_URL}harmonyhub/songs/`;
-        fetchSongs(initialUrl);
+        fetchOwerSongs();
     }, []);
-
-    const handlePageChange = (url) => {
-        fetchSongs(url);
-        window.scrollTo({ "behavior": "smooth", "top": 0 })
-    };
 
     return (
         <>
-            <section className="songs">
-                <div className="songs__container-title">
-                    <h1 className="songs__title">Songs</h1>
+            <section className="owner__songs">
+                <div className="owner__songs__container-title">
+                    <h1 className="owner__songs__title">Songs</h1>
                 </div>
-                <div className="songs__container">
+                <div className="owner__songs__container">
                     {
                         isLoading ? (
                             <l-reuleaux
@@ -70,13 +57,6 @@ const Songs = () => {
                         )
                     }
                 </div>
-                {
-                    songs.length && !isLoading ? (
-                        <Pagination next={nextSongs} prev={previusSongs} onPageChange={handlePageChange} />
-                    ) : (
-                        null
-                    )
-                }
             </section>
         </>
     );

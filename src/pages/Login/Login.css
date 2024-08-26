@@ -6,7 +6,12 @@
     box-shadow: 0 7px 35px var(--background);
     border-radius: 5px;
     width: 100%;
-    min-height: calc(100vh - 115px);
+    height: calc(100vh - 200px);
+    overflow: auto;
+}
+
+l-reuleaux {
+    margin: 0;
 }
 
 .main__form {
@@ -169,6 +174,7 @@ input[type="email"].invalid {
     }
 
     .main__form {
+        max-width: 30rem;
         padding: 1.537rem 2rem;
     }
 

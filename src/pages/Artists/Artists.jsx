@@ -18,7 +18,6 @@ const Artists = () => {
                     throw new Error("Error al cargar artistas");
                 }
                 const data = await response.json();
-                console.log(data);
                 setArtists(data.results);
                 setNextArtists(data.next);
                 setPrevArtists(data.previous);

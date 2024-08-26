@@ -19,9 +19,7 @@ const Albums = () => {
             setAlbums(data.results);
             setNextAlbums(data.next);
             setPreviusAlbums(data.previous);
-            console.log(data);
             setLoading(false);
-
             sessionStorage.setItem('currentAlbumsPage', url);
         } catch (error) {
             setError(error);

@@ -46,10 +46,10 @@ const Login = () => {
                         }
                     });
                     const profile_data = await res_profile.json();
+                    login(responseData.token, profile_data.user__id);
                 } else {
                     throw new Error("No se obtuvo un token correctamente");
                 }
-                login(responseData.token, profile_data.user__id);
             } catch (error) {
                 console.error("Error al iniciar sesión", error);
                 setIsError(true);
@@ -85,7 +85,7 @@ const Login = () => {
                 </form>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Login;

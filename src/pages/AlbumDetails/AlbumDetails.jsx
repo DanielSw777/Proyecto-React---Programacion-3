@@ -1,14 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { MusicContext } from '../../context/MusicProvider';
-import logo from "../../assets/logo.jpg";
 import './AlbumDetails.css'; // Asegúrate de que el archivo CSS está en la ubicación correcta
 
 const AlbumDetails = () => {
     const { id: albumId } = useParams(); // Extrae el id del álbum desde los parámetros de la URL
     const [album, setAlbum] = useState(null);
-    const [songsAlbum, setSongsAlbum] = useState([]);
-    const { playTrack, isPlaying, currentTrack} = useContext(MusicContext); // Usa el contexto para actualizar la pista actual
+    const [songs, setSongs] = useState([]);
+    const { playTrack } = useContext(MusicContext); // Usa el contexto para actualizar la pista actual
 
     useEffect(() => {
         // Obtener detalles del álbum
@@ -20,37 +19,35 @@ const AlbumDetails = () => {
         // Obtener canciones del álbum
         fetch(`https://sandbox.academiadevelopers.com/harmonyhub/albums/${albumId}/songs/`)
             .then(response => response.json())
-            .then(data => setSongsAlbum(data.results))
+            .then(data => setSongs(data.results))
             .catch(error => console.error('Error fetching album songs:', error));
     }, [albumId]);
 
     if (!album) {
-        return <div>Loading...</div>;
+        return <l-reuleaux
+            size="45"
+            stroke="8"
+            stroke-length="0.15"
+            bg-opacity="0.1"
+            speed="1.2"
+            color="#2a2185"
+        ></l-reuleaux>;
     }
 
     return (
         <div className="album-details-container">
             <div className="album-details-content">
                 <div className="album-image">
-                    <img src={album.cover ?? logo} alt={album.title} />
+                    {album.cover && <img src={album.cover} alt={album.title} />}
                 </div>
                 <div className="song-list">
                     <h1>{album.title}</h1>
                     <p>Year: {album.year}</p>
                     <h2>Songs</h2>
                     <ul>
-                        {songsAlbum.map(song => (
+                        {songs.map(song => (
                             <li key={song.id}>
                                 <p>{song.title}</p>
-                                {
-                                    isPlaying && currentTrack?.id === song.id? (
-                                        <l-quantum
-                                            size="35"
-                                            speed="1.75"
-                                            color="black"
-                                        ></l-quantum>
-                                    ) : (null)
-                                }
                                 <button onClick={() => playTrack(song)}>Play</button>
                             </li>
                         ))}

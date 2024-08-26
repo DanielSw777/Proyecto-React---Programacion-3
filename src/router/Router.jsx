@@ -3,13 +3,13 @@ import Layout from "../layout/Layout";
 import Error404 from "../pages/Error404/Error404";
 import Home from "../pages/Home/Home";
 import Profile from "../pages/Profile/Profile";
+import EditProfile from "../pages/EditProfile/EditProfile";
 import Albums from "../pages/Albums/Albums";
 import AlbumDetails from "../pages/AlbumDetails/AlbumDetails";
 import Songs from "../pages/Songs/Songs";
 import Artists from "../pages/Artists/Artists";
 import ArtistDetails from "../pages/ArtistDetails/ArtistDetails";
 import Genres from "../pages/Genres/Genres";
-import Settings from "../pages/Settings/Settings";
 import Login from "../pages/Login/Login";
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -25,7 +25,19 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/profile",
-                element: <Profile />
+                element: (
+                    <ProtectedRoute>
+                        <Profile />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/profile-edit",
+                element: (
+                    <ProtectedRoute>
+                        <EditProfile />
+                    </ProtectedRoute>
+                )
             },
             {
                 path: "/albums",
@@ -50,14 +62,6 @@ const Router = createBrowserRouter([
             {
                 path: "/genres",
                 element: <Genres />
-            },
-            {
-                path: "/settings",
-                element: (
-                    <ProtectedRoute>
-                        <Settings />
-                    </ProtectedRoute>
-                )
             },
             {
                 path: "/login",

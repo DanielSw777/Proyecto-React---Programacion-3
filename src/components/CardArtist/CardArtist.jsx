@@ -14,7 +14,7 @@ const CardArtist = ({ artist }) => {
                 <h3 className="artist-title">{artist.name}</h3>
                 <div className="artist-container-links">
                     <Link to={`/artists/${artist.id}`} className="artist-disc">Discography</Link>
-                    <Link type='button' className="artist-web" to={artist.website} target="_blank">
+                    <Link className="artist-web" to={artist.website} target="_blank">
                         Web Site
                     </Link>
                 </div>

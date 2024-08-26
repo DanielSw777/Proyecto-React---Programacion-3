@@ -1,0 +1,34 @@
+.owner__songs::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.owner__songs::-webkit-scrollbar-thumb {
+    background-color: var(--blue2);
+    border-radius: 7px;
+}
+
+.owner__songs::-webkit-scrollbar-track-piece {
+    border-radius: 7px;
+    background-color: var(--background);
+}
+
+.owner__songs {
+    color: var(--black3);
+    height: 100%;
+    box-shadow: 0 7px 35px var(--background);
+    border-radius: 5px;
+}
+
+.owner__songs__container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.owner__songs__title {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    line-height: 7rem;
+}

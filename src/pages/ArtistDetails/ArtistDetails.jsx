@@ -20,7 +20,6 @@ function ArtistDetails() {
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-                console.log(data);
                 if (!response.ok) {
                     throw new Error("Error al cargar canciones");
                 }

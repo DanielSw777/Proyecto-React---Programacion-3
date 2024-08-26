@@ -18,67 +18,63 @@
     border-radius: 5px;
     height: calc(100vh - 200px);
     overflow: auto;
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
-.profile__container {
+.profile-content {
+    padding: 1rem;
+    height: 10rem;
+    background-color: var(--black1);
     display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-}
-
-.profile__title {
-    font-size: 3rem;
-    width: 100%;
-    text-align: center;
-    line-height: 7rem;
-}
-
-.pagination-container {
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 1.3rem;
 }
 
-.pagination {
+.profile-media {
+    width: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    list-style: none;
 }
 
-.page-item {
-    width: 2.3rem;
-    height: 2.3rem;
-    text-align: center;
+.profile_content-img img {
+    max-width: 100%;
+    height: 7rem;
+    border-radius: 50%;
+}
+
+.profile-content-data {
+    width: 50%;
+    padding: 1rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    margin: 0.07rem;
-    background-color: var(--blue);
-    color: var(--white)FFF;
-    cursor: pointer;
+    flex-direction: column;
 }
 
-.page-btn {
-    cursor: pointer;
-    color: var(--white)FFF;
-    border: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 3px;
+.profile-editar {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1.373rem;
     background-color: var(--blue2);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.page-btn:disabled {
-    opacity: 0.6;
-    background-color: var(--blue-disabled);
+.profile-editar:hover {
+    background-color: var(--black2);
 }
 
-.bi-arrow-left::before,
-.bi-arrow-right::before {
-    padding: 0.7rem;
+.profile-content-data span {
+    margin-left: 0.5rem;
 }
+
+.profile-name-last span{
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+

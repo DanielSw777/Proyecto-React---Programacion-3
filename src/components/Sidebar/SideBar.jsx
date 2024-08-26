@@ -69,14 +69,6 @@ const SideBar = () => {
                             <span className="title">Genres</span>
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/settings">
-                            <span className="icon">
-                                <ion-icon name="settings-outline"></ion-icon>
-                            </span>
-                            <span className="title">Settings</span>
-                        </NavLink>
-                    </li>
                     {
                         isAuthenticated ? (
                             <li>
