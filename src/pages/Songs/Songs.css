@@ -33,3 +33,39 @@
     text-align: center;
     line-height: 7rem;
 }
+
+/* Estilos para el contenedor del título y botón */
+.songs__container-title {
+    display: flex;
+    justify-content: space-between;
+    /* Espacio entre el título y el botón */
+    align-items: center;
+    /* Alineación vertical */
+    margin-bottom: 1rem;
+    /* Espacio debajo del contenedor del título */
+}
+
+/* Estilo para el botón de agregar canción */
+.songs__add-button {
+    padding: 0.75rem 1.5rem;
+    /* Espaciado dentro del botón */
+    font-size: 1rem;
+    /* Tamaño del texto del botón */
+    color: var(--white);
+    /* Color del texto del botón */
+    background-color: var(--blue);
+    /* Fondo del botón */
+    border: none;
+    /* Quitar el borde predeterminado */
+    border-radius: 5px;
+    /* Bordes redondeados del botón */
+    cursor: pointer;
+    /* Cambiar el cursor cuando se pasa sobre el botón */
+    transition: background-color 0.3s;
+    /* Transición suave para el color de fondo */
+}
+
+.songs__add-button:hover {
+    background-color: var(--blue2);
+    /* Cambiar el color de fondo cuando se pasa el cursor sobre el botón */
+}

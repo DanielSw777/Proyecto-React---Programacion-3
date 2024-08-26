@@ -2,9 +2,12 @@ import { useContext, useEffect, useState } from 'react';
 import CardSong from '../../components/CardSong/CardSong';
 import { MusicContext } from '../../context/MusicProvider';
 import Pagination from '../../components/Pagination/Pagination';
+import { useAuth } from '../../context/AuthProvider';
+import { Link } from 'react-router-dom'; // Para la redirección del botón
 import "./Songs.css";
 
 const Songs = () => {
+    const { isAuthenticated } = useAuth("state"); // Obtener el estado de autenticación
     const [isLoading, setIsLoading] = useState(false);
     const [songs, setSongs] = useState([]);
     const [nextSongs, setNextSongs] = useState(null);
@@ -51,6 +54,11 @@ const Songs = () => {
             <section className="songs">
                 <div className="songs__container-title">
                     <h1 className="songs__title">Songs</h1>
+                    {isAuthenticated && (
+                        <Link to="/add-song" className="song-play">
+                            Agregar Canción
+                        </Link>
+                    )}
                 </div>
                 <div className="songs__container">
                     {

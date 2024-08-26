@@ -1,0 +1,59 @@
+.add-song {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 7px 35px var(--background);
+    background-color: var(--white); /* Fondo blanco para mayor contraste */
+}
+
+.add-song h1 {
+    font-size: 2rem;
+    color: var(--black1); /* Color de texto oscuro para mejor legibilidad */
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.add-song form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-song input[type="text"],
+.add-song input[type="file"] {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--black2);
+    border-radius: 5px;
+    background-color: var(--gray2); /* Fondo gris claro para los campos */
+    color: var(--black1); /* Color de texto oscuro para mejor legibilidad */
+    font-size: 1rem;
+}
+
+.add-song input[type="file"] {
+    padding: 0.5rem;
+}
+
+.add-song button {
+    padding: 0.75rem;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.add-song button:disabled {
+    background-color: var(--blue-disabled);
+    opacity: 0.7;
+}
+
+.add-song .error {
+    color: var(--red);
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+}

@@ -12,6 +12,7 @@ import ArtistDetails from "../pages/ArtistDetails/ArtistDetails";
 import Genres from "../pages/Genres/Genres";
 import Login from "../pages/Login/Login";
 import ProtectedRoute from "./ProtectedRoute";
+import AddSong from "../pages/AddSong/AddSong";
 
 const Router = createBrowserRouter([
     {
@@ -66,6 +67,14 @@ const Router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />
+            },
+            {
+                path: "/add-song",
+                element: (
+                    <ProtectedRoute>
+                        <AddSong />
+                    </ProtectedRoute>
+                )
             }
         ]
     }
