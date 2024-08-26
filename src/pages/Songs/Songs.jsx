@@ -55,7 +55,7 @@ const Songs = () => {
                 <div className="songs__container-title">
                     <h1 className="songs__title">Songs</h1>
                     {isAuthenticated && (
-                        <Link to="/add-song" className="song-play">
+                        <Link to="/add-song" className="add-song-button">
                             Agregar Canción
                         </Link>
                     )}
